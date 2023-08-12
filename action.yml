@@ -23,6 +23,10 @@ author: 'Ludeku'
 branding:
   icon: arrow-up-circle
   color: red
+inputs:
+  apiKey:
+    required: true
+    description: 'API Key'
   stack:
     required: true
     description: 'Name of the stack you want deployed, can be new or existing. If existing, stack will be updated'
@@ -32,6 +36,9 @@ branding:
   deployUrl:
     required: true
     description: 'Deploy url'
+  port:
+    required: false
+    description: 'Port'
 runs:
   using: 'node16'
   main: 'index.js'
