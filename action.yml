@@ -16,9 +16,9 @@ inputs:
   externalNetworks:
     description: 'List of external networks'
     required: false
-  outputs:
-    dockerComposeString:
-      description: 'Docker-compose file as a string'
-  runs:
-    using: 'node16'
-    main: 'index.js'
+outputs:
+  dockerComposeString:
+    description: 'Docker-compose file as a string'
+runs:
+  using: 'node16'
+  main: 'index.js'
