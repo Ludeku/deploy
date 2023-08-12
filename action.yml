@@ -7,8 +7,8 @@ inputs:
   deployUrl:
     description: 'Traefik host url'
     required: true
-  environment:
-    description: 'List of environment variables'
+  port:
+    description: 'Port'
     required: false
 outputs:
   dockerComposeString:
