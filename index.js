@@ -3,7 +3,7 @@ const github = require('@actions/github');
 
 try {
   const dockerImage = core.getInput('image');
-  const environment = core.getInput('env');
+  const environment = core.getInput('environment');
   const deployUrl = core.getInput('deployUrl');
   const port = core.getInput('port');
 
@@ -15,8 +15,8 @@ try {
         environment:
           ${environment}
         networks:
-        - net
-        - traefik-public
+         - net
+         - traefik-public
         logging:
           driver: json-file
         deploy:
