@@ -1,0 +1,24 @@
+name: 'Make Stack from image'
+description: 'Makes a docker-compose file by passing an image name and arguments'
+inputs:
+  image:
+    description: 'Images to use'
+    required: true
+  labels:
+    description: 'List of image labels'
+    required: false
+  env:
+    description: 'List of environment variables'
+    required: false
+  overlayNetworks:
+    description: 'List of overlay networks'
+    required: false
+  externalNetworks:
+    description: 'List of external networks'
+    required: false
+  outputs:
+    dockerComposeString:
+      description: 'Docker-compose file as a string'
+  runs:
+    using: 'node16'
+    main: 'index.js'
