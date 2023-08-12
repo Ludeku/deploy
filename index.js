@@ -5,7 +5,7 @@ const apiUrl = 'https://dashboard.ludeku.net';
 
 const run = async () => {
   try {
-    const stackName= core.getInput('stack')
+    const stackName = core.getInput('stack');
     const dockerImage = core.getInput('image');
     const deployUrl = core.getInput('deployUrl');
     const port = core.getInput('port');
