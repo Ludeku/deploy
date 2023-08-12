@@ -1,14 +1,15 @@
 on: [push]
 
 jobs:
-  make_docker_compose_job:
+  deploy:
     runs-on: ubuntu-latest
-    name: A job to maka a docker-compose file
+    name: Deploy service as a stack
     steps:
-    - name: Create docker-compose
-      id: create-docker-compose
-      uses: Ludeku/make-docker-compose-from-image@v1.3
+    - name: Deploy stack
+      uses: Ludeku/deploy@v1
       with:
+        stack: 'test'
         image: hello-world
-        deployUrl: 'test.ludeku.net'
+        apiKey: ${{secrets.API_KEY}}
+        deployUrl: 'hello-world.ludeku.net'
         port: 80

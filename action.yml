@@ -1,18 +1,37 @@
-name: 'Make Stack from image'
-description: 'Makes a docker-compose file by passing an image name and arguments'
-inputs:
+# name: 'Make Stack from image'
+# description: 'Makes a docker-compose file by passing an image name and arguments'
+# inputs:
+#   image:
+#     description: 'Image to use'
+#     required: true
+#   deployUrl:
+#     description: 'Traefik host url'
+#     required: true
+#   port:
+#     description: 'Port'
+#     required: false
+# outputs:
+#   dockerComposeString:
+#     description: 'Docker-compose file as a string'
+# runs:
+#   using: 'node16'
+#   main: 'index.js'
+
+name: 'Stack Deploy'
+description: 'Deploys a stack'
+author: 'Ludeku'
+branding:
+  icon: arrow-up-circle
+  color: red
+  stack:
+    required: true
+    description: 'Name of the stack you want deployed, can be new or existing. If existing, stack will be updated'
   image:
-    description: 'Image to use'
     required: true
+    description: 'Name of the image'
   deployUrl:
-    description: 'Traefik host url'
     required: true
-  port:
-    description: 'Port'
-    required: false
-outputs:
-  dockerComposeString:
-    description: 'Docker-compose file as a string'
+    description: 'Deploy url'
 runs:
   using: 'node16'
   main: 'index.js'
