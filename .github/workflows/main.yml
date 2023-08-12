@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Create docker-compose
       id: create-docker-compose
-      uses: Ludeku/make-docker-compose-from-image
+      uses: Ludeku/make-docker-compose-from-image@v1
       with:
         image: hello-world
         labels: |
