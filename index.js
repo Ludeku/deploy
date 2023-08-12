@@ -9,7 +9,6 @@ const run = async () => {
     const stackName = core.getInput('stack');
     const dockerImage = core.getInput('image');
     const deployUrl = core.getInput('deployUrl');
-    const port = core.getInput('port');
     const apiKey = core.getInput('apiKey');
 
     const stackBody = `
@@ -18,21 +17,17 @@ const run = async () => {
         app:
           image: ${dockerImage}
           networks:
-          - net
           - traefik-public
           logging:
             driver: json-file
           deploy:
             labels:
-              traefik.docker.network: traefik-public
               traefik.enable: 'true'
-              traefik.http.routers.app.rule: Host(\`${deployUrl}\`)
-              traefik.http.routers.app.tls: 'true'
-              traefik.http.routers.app.tls.certresolver: leresolver
-              traefik.http.services.app.loadbalancer.server.port: '${port || 5000}'
+              traefik.http.routers.${stackName}_app.rule: Host(\`${deployUrl}\`)
+              traefik.http.routers.${stackName}_app.tls: 'true'
+              traefik.http.routers.${stackName}_app.tls.certresolver: leresolver
+              traefik.http.services.${stackName}_app.loadbalancer.server.port: '80'
       networks:
-        net:
-          driver: overlay
         traefik-public:
           external: true
   `;

@@ -8,8 +8,7 @@ jobs:
     - name: Deploy stack
       uses: Ludeku/deploy@v1
       with:
-        stack: 'test'
+        stack: 'hello-world'
         image: hello-world
         apiKey: ${{secrets.API_KEY}}
         deployUrl: 'hello-world.ludeku.net'
-        port: 80

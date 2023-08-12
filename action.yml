@@ -36,9 +36,6 @@ inputs:
   deployUrl:
     required: true
     description: 'Deploy url'
-  port:
-    required: false
-    description: 'Port'
 runs:
   using: 'node16'
   main: 'index.js'
