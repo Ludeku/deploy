@@ -1,5 +1,5 @@
-import * as core from '@actions/core';
-import fetch from 'node-fetch';
+const core = require('@actions/core');
+const github = require('@actions/github');
 
 const apiUrl = 'https://dashboard.ludeku.net';
 
