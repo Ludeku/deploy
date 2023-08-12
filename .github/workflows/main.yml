@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Create docker-compose
       id: create-docker-compose
-      uses: Ludeku/make-docker-compose-from-image@v1.02
+      uses: Ludeku/make-docker-compose-from-image@v1.03
       with:
         image: hello-world
         deployUrl: 'test.ludeku.net'
