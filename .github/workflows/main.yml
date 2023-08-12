@@ -7,18 +7,10 @@ jobs:
     steps:
     - name: Create docker-compose
       id: create-docker-compose
-      uses: Ludeku/make-docker-compose-from-image@v1.01
+      uses: Ludeku/make-docker-compose-from-image@v1.02
       with:
         image: hello-world
-        labels: |
-          traefik.enable: 'true'
-          traefik.docker.network: traefik-public
-          traefik.http.routers.app.rule: Host(`myApp.domain.com`)
-        env: |
-          var1=var1
-          var2=var2
-        overlayNetworks:
-          net
-        externalNetworks:
-          traefik-public
-
+        deployUrl: 'test.ludeku.net'
+        environment: |
+          var1: var1
+          var2: var2

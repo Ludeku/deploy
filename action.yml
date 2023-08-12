@@ -2,19 +2,13 @@ name: 'Make Stack from image'
 description: 'Makes a docker-compose file by passing an image name and arguments'
 inputs:
   image:
-    description: 'Images to use'
+    description: 'Image to use'
     required: true
-  labels:
-    description: 'List of image labels'
-    required: false
-  env:
+  deployUrl:
+    description: 'Traefik host url'
+    required: true
+  environment:
     description: 'List of environment variables'
-    required: false
-  overlayNetworks:
-    description: 'List of overlay networks'
-    required: false
-  externalNetworks:
-    description: 'List of external networks'
     required: false
 outputs:
   dockerComposeString:
